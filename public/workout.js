@@ -1,3 +1,4 @@
+// gets last workout; if there is a last workout set attribute of href "/exercise" to "/exercise?id+" lastWorkout._id; create workoutSummary object and store lastWorkout properties date, totalDuration, numExercises, ...tallyExercises; render workoutSummary to the index.html workout-stats div class
 async function initWorkout() {
   const lastWorkout = await API.getLastWorkout();
   console.log("Last workout:", lastWorkout);
@@ -56,7 +57,7 @@ function renderWorkoutSummary(summary) {
     totalReps: "Total Reps Performed",
     totalDistance: "Total Distance Covered"
   };
-
+   
   Object.keys(summary).forEach(key => {
     const p = document.createElement("p");
     const strong = document.createElement("strong");

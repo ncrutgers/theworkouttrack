@@ -1,3 +1,4 @@
+// init function runs with index.html; if search undefined, get last workout; if there is a workout set search url search to ?id+ + workout_id; else set id continue-btn class to d-none
 init();
 
 async function init() {
