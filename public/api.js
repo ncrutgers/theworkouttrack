@@ -1,3 +1,4 @@
+// API object contains functions that fetch routes from server
 const API = {
   async getLastWorkout() {
     let res;
