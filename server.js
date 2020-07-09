@@ -13,7 +13,11 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost/workout", {
+// If deployed, use the deployed database.Otherwise use the local workout database
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/workout";
+
+// Connect to the MongoDB
+mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useFindAndModify: false
 });
